@@ -9,7 +9,7 @@ import java.util.Scanner;
  * the code which can generate exception is put into try block which is then catch after
  * we can use numerous catch block but the exception can be caught only by correct catch block
  */
-public class ErrorAndExceptionsInJava {
+public class P14_ErrorAndExceptionsInJava {
 
 	public static void main(String[] args) {
 		ABC obj=new ABC();
