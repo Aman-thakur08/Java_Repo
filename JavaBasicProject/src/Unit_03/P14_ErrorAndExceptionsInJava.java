@@ -25,6 +25,7 @@ public class P14_ErrorAndExceptionsInJava {
 	}
 
 //the finally keyword lets you execute code,after try.....catch regardless of the results
+	//agar catch na bhi ho tbhi bhi finally chalega chahe exception terminate ho jaye
 }
 class ABC{
 	void arithmeticException()
