@@ -9,34 +9,76 @@ package Unit_03;
  * What is Multitasking?
  * Sequential multitasking
  * parallel multitasking
+ * 
  * concurrent Multitasking
+ * 
+ * 
+ * Users:MultiThreading task
+ * - it is the users job to find out the independent task of the process.
+ * - you found t1,t2,t3 and t4 tasks of process T1 out of 8 total tasks.
+ * - context switching between  these task  and the worst time is not decided by the user instead JVM will decide this all.
+ * - MultiThreading is applied only when concurrent multitasking occurs
+ * 
+ * - it is users job to put these independent codes into their resective threads (T1,T2,T3,T4)
+ * - user have to start these threads by 
+ * 	- T1.start()
+ * 	- T2.start()
+ *  - T3.start()
+ *  - T4.start()
  */
 public class P16_MultiThreadingInJava {
 
 	public static void main(String[] args) {
-		MultiThreading obj=new MultiThreading();
-		obj.interThreadCommunication();
-		obj.ProductConsumerProblems();
-		obj.threadConcept();
-		obj.threadSynchronization();
-
+	//main method will execute C1.show1() and C2.show() in sequence
+//		C1 obj1=new C1();
+//		obj1.show1();
+//		C2 obj2=new C2();
+//		obj2.show2();
+		Thread t1=new Thread(new T1(),"T1");
+		Thread t2=new Thread(new T2(),"T2");
+		t1.start();
+		t2.start();
 	}
 
 }
-class MultiThreading{
-	void threadConcept() {
-		
+class C1{
+	void show1() {
+		for(int i=0;i<10;i++) {
+			System.out.println(i+"- Hey_1!");
+		}
 	}
-	void threadSynchronization() {
-		
+}
+class C2{
+	void show2() {
+		for(int i=0;i<10;i++) {
+			System.out.println(i+"- Hey_2!");
+		}
 	}
-	void interThreadCommunication() {
-		
+}
+class T1 extends Thread{
+	public void run() {
+		try {
+			Thread.sleep(5000);
+			System.out.println("hello");
+		} catch (InterruptedException e) {
+			
+			e.printStackTrace();
+		}
 	}
-	void ProductConsumerProblems() {
-		
-	}
-	void Wait_And_Notify() {
-		
+}
+//class T1 implements Runnable{
+//	@Override
+//	public void run() {
+//		for(int i=0;i<10;i++) {
+//			System.out.println(i+"- Hey_1!");
+//		}
+//	}
+//}
+class T2 implements Runnable{
+	@Override
+	public void run() {
+		for(int i=0;i<10;i++) {
+			System.out.println(i+"- Hey_2!");
+		}
 	}
 }
