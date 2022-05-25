@@ -18,8 +18,8 @@ package Unit_03;
  * - you found t1,t2,t3 and t4 tasks of process T1 out of 8 total tasks.
  * - context switching between  these task  and the worst time is not decided by the user instead JVM will decide this all.
  * - MultiThreading is applied only when concurrent multitasking occurs
- * 
- * - it is users job to put these independent codes into their resective threads (T1,T2,T3,T4)
+ * - JVM does not work until the thread is started by user
+ * - it is users job to put these independent codes into their respective threads (T1,T2,T3,T4)
  * - user have to start these threads by 
  * 	- T1.start()
  * 	- T2.start()
@@ -56,6 +56,7 @@ class C2{
 	}
 }
 class T1 extends Thread{
+	
 	public void run() {
 		try {
 			Thread.sleep(5000);
