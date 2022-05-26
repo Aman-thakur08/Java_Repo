@@ -83,3 +83,4 @@ class T2 implements Runnable{
 		}
 	}
 }
+//ctrl+shift+t >>>> object class
