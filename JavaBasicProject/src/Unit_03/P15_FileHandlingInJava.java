@@ -3,6 +3,7 @@ package Unit_03;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -24,12 +25,14 @@ public class P15_FileHandlingInJava {
 
 	public static void main(String[] args) {
 		ABCDEF obj = new ABCDEF();
-		try {
-			obj.takeInputFromAFile();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			
+				try {
+					obj.takeInputFromAFile();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			
 		// obj.saveOutputIntoAFile();
 		// obj.saveLogOfProgram();
 
@@ -41,9 +44,9 @@ class ABCDEF {
 	
 	static int a = 10;
 
-	void takeInputFromAFile() throws IOException {
+	void takeInputFromAFile() throws IOException  {
 
-		String path = "/Users/akashchauhan/git/FirstJavaBasedProject/JavaBasicProject/src/Unit_03/newfile.txt";
+		String path = "C:\\Users\\HOME1\\git\\Java_Repo\\JavaBasicProject\\src\\Unit_03\\newfile.txt";
 		File file = new File(path);
 
 		BufferedReader br = new BufferedReader(new FileReader(file));

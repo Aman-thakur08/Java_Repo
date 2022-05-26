@@ -14,14 +14,13 @@ package Unit_03;
 public class P16_MultiThreading_WaitAndNotify {
 
  public static void main(String[] args) {
-
-  SharedResource c = new SharedResource();
+	 SharedResource c = new SharedResource();
   
-  new Thread() {
-   public void run() {
-    c.withdraw(15000);
-   }
-  }.start();
+	 new Thread() {
+	 public void run() {
+	 c.withdraw(15000);
+	 }
+	 }.start();
   
 //  new Thread() {
 //   public void run() {
@@ -48,7 +47,7 @@ class SharedResource {
   if (this.amount < amount) {
    System.out.println("Less balance; waiting for deposit...");
    try {
-    wait();
+    wait();//will wait until notify is encountered in another thread
    } catch (Exception e) {
    }
   }
