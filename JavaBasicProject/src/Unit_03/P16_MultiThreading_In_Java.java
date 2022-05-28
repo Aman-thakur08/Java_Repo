@@ -26,7 +26,7 @@ package Unit_03;
  *  - T3.start()
  *  - T4.start()
  */
-public class P16_MultiThreadingInJava {
+public class P16_MultiThreading_In_Java {
 
 	public static void main(String[] args) {
 	//main method will execute C1.show1() and C2.show() in sequence
