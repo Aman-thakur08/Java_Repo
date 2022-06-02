@@ -4,9 +4,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 //create template
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JRadioButton;
+import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -19,7 +23,12 @@ public class P17_Swing_In_Java {
 
 }
 class SwingInJava extends JFrame{
+	JTable jt1;
+	JList list;
+	JComboBox jb1;
 	JTextArea ta1;
+	JRadioButton r1;
+	JRadioButton r2;
 	JTextField t1;
 	JTextField t2;
 	JButton b1;
@@ -30,16 +39,21 @@ class SwingInJava extends JFrame{
 	JLabel l1;
 	
 	SwingInJava(){
+		String data[][]= { {"101","Amit","67000"},{"102","Mehul","70000"}};
+		String column[]= {"ID","NAME","SALARY"};
 		ta1 = new JTextArea(10,30); 
+		r1=new JRadioButton("Male");
+		r2=new JRadioButton("Female");
 		t1=new JTextField(20);
 		t2=new JTextField(20);
-		
 		b1=new JButton("Add");
 		b2=new JButton("Subtract");
 		b3=new JButton("Multiply");
 		b4=new JButton("Divide");
 		l1=new JLabel("Res");
 		add(ta1);
+		add(r1);
+		add(r2);
 		add(t1);
 		add(t2);
 		System.out.println();
@@ -56,7 +70,29 @@ class SwingInJava extends JFrame{
 				String s2=t2.getText();
 				int a1=Integer.parseInt(s1);
 				int a2=Integer.parseInt(s2);
-				
+				if(e.getSource()==b1)
+				{
+					Integer sum=a1+a2;
+					l1.setText(sum.toString());
+				}
+				if(e.getSource()==b2)
+				{
+					Integer diff=a1-a2;
+					l1.setText(diff.toString());
+				}
+				if(e.getSource()==b3)
+				{
+					Integer prod=a1*a2;
+					l1.setText(prod.toString());
+				}
+				if(e.getSource()==b4)
+				{
+					Integer div=a1/a2;
+					l1.setText(div.toString());
+				}
+				if(r1.isSelected()) {
+					l1.setText("is a Male");
+				}
 				
 			}
 		};
