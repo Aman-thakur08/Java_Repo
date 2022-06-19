@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 //create template
 import javax.swing.JFrame;
@@ -24,13 +25,22 @@ public class P17_Swing_In_Java {
 }
 class SwingInJava extends JFrame{
 	JTable jt1;
+	
 	JList list;
+	
 	JComboBox jb1;
+	
 	JTextArea ta1;
+	
 	JRadioButton r1;
 	JRadioButton r2;
+	
+	JCheckBox c1;
+	JCheckBox  c2;
+	
 	JTextField t1;
 	JTextField t2;
+	
 	JButton b1;
 	JButton b2;
 	JButton b3;
@@ -41,17 +51,33 @@ class SwingInJava extends JFrame{
 	SwingInJava(){
 		String data[][]= { {"101","Amit","67000"},{"102","Mehul","70000"}};
 		String column[]= {"ID","NAME","SALARY"};
+		
+		jt1=new JTable(data,column);
+		
+		String week[]= {"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"};
+		list=new JList<>(week);
+		jb1=new JComboBox<>(week);
 		ta1 = new JTextArea(10,30); 
 		r1=new JRadioButton("Male");
 		r2=new JRadioButton("Female");
+		
+		c1=new JCheckBox("Dancer");
+		c2=new JCheckBox("Singer");
+		
 		t1=new JTextField(20);
 		t2=new JTextField(20);
+		
 		b1=new JButton("Add");
 		b2=new JButton("Subtract");
 		b3=new JButton("Multiply");
 		b4=new JButton("Divide");
+		
 		l1=new JLabel("Res");
 		add(ta1);
+		add(jt1);
+		add(jb1);
+		add(c1);
+		add(c2);
 		add(r1);
 		add(r2);
 		add(t1);
@@ -93,7 +119,15 @@ class SwingInJava extends JFrame{
 				if(r1.isSelected()) {
 					l1.setText("is a Male");
 				}
-				
+				if(r2.isSelected()) {
+					l1.setText("is a FeMale");
+				}
+				if(c1.isSelected()) {
+					l1.setText("is a Dancer");
+				}
+				if(c2.isSelected()) {
+					l1.setText("is a Singer");
+				}
 			}
 		};
 		b1.addActionListener(al);
